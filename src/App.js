@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Teste nodemon
-        </a>
-      </header>
+      <input type="text" placeholder="Pesquisar" />
+      <div className="Resultados">
+        <h2>Campo de resultados do banco de dados</h2>
+        <p>Descrição</p>
+        <div className='Tabela'>
+          <p className='texto'>Texto dentro da div <button className='excluir'>X</button></p>
+          <p className='texto'>Texto dentro da div <button className='excluir'>X</button></p>
+          <p className='texto'>Texto dentro da div <button className='excluir'>X</button></p>
+          <p className='texto'>Texto dentro da div <button className='excluir'>X</button></p>
+          <p className='texto'>Texto dentro da div <button className='excluir'>X</button></p>
+          <p className='texto'>Texto dentro da div <button className='excluir'>X</button></p>
+          <p className='texto'>Texto dentro da div <button className='excluir'>X</button></p>
+          <p className='texto'>Texto dentro da div <button className='excluir'>X</button></p>
+        </div>
+      </div>
     </div>
   );
 }

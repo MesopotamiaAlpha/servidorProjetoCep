@@ -9,7 +9,7 @@ app.use(express.json())
 
 // Route to get all posts
 app.get("/api/get", (req, res) => {
-    db.query("SELECT * FROM prinex", (err, result) => {
+    db.query("SELECT * FROM cep", (err, result) => {
         if (err) {
             console.log(err)
         }
@@ -21,20 +21,7 @@ app.get("/api/get", (req, res) => {
 app.get("/api/getFromId/:id", (req, res) => {
 
     const id = req.params.id;
-    db.query("SELECT * FROM prinex WHERE id_pri = ?", id,
-        (err, result) => {
-            if (err) {
-                console.log(err)
-            }
-            res.send(result)
-        });
-});
-
-//rota para pegar pendencias dos clientes
-app.get("/api/getPendencias", (req, res) => {
-
-    const id = req.params.id;
-    db.query("SELECT * FROM pendencias ", id,
+    db.query("SELECT * FROM cep WHERE id = ?", id,
         (err, result) => {
             if (err) {
                 console.log(err)
@@ -54,7 +41,7 @@ app.post('/api/create', (req, res) => {
 
     console.log(usedestinatario, usertipo , usercte, userdata)
 
-    db.query("INSERT INTO prinex (destinatario,tipo,cte,cad_data) VALUES (?,?,?,?)", [usedestinatario,usertipo,usercte,userdata], (err, result) => {
+    db.query("INSERT INTO cep (cep) VALUES (?)", [usercep], (err, result) => {
         if (err) {
             console.log(err)
         }
@@ -67,7 +54,7 @@ app.post('/api/create', (req, res) => {
 app.delete('/api/delete/:id', (req, res) => {
     const id = req.params.id;
 
-    db.query("DELETE FROM prinex WHERE id_pri= ?", id, (err, result) => {
+    db.query("DELETE FROM prinex WHERE id= ?", id, (err, result) => {
         if (err) {
             console.log(err)
         }
@@ -75,5 +62,5 @@ app.delete('/api/delete/:id', (req, res) => {
 })
 
 app.listen(PORT, () => {
-    console.log(`Server is running on ${PORT}`)
+    console.log(`O servidor está rodando na porta ${PORT}`)
 })
