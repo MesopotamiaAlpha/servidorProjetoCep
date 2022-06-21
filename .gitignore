@@ -23,4 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 #configurações
-/config
+/server/config
+server/config/db.js
+server/config/*.js
