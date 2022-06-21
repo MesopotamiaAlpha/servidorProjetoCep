@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Painel Cep Android",
+  "name": "Painel para acesso ao CEP android",
   "icons": [
     {
       "src": "favicon.ico",

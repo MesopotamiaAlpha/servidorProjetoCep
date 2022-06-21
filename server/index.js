@@ -34,14 +34,12 @@ app.get("/api/getFromId/:id", (req, res) => {
 // Route for creating the post
 app.post('/api/create', (req, res) => {
 
-    const usedestinatario = req.body.userDestinatario;
-    const usertipo = req.body.userTipo;
-    const usercte = req.body.userCte;
-    const userdata = req.body.userData;
+    const cep = req.body.cep;
 
-    console.log(usedestinatario, usertipo , usercte, userdata)
 
-    db.query("INSERT INTO cep (cep) VALUES (?)", [usercep], (err, result) => {
+    console.log(cep)
+
+    db.query("INSERT INTO cep (cep) VALUES (?)", [cep], (err, result) => {
         if (err) {
             console.log(err)
         }
@@ -54,7 +52,7 @@ app.post('/api/create', (req, res) => {
 app.delete('/api/delete/:id', (req, res) => {
     const id = req.params.id;
 
-    db.query("DELETE FROM prinex WHERE id= ?", id, (err, result) => {
+    db.query("DELETE FROM cep WHERE id= ?", id, (err, result) => {
         if (err) {
             console.log(err)
         }
