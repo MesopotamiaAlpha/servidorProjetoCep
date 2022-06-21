@@ -26,3 +26,4 @@ yarn-error.log*
 /server/config
 server/config/db.js
 server/config/*.js
+server/config/db.js
