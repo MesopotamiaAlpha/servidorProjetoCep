@@ -8,19 +8,19 @@ import TextField from '@mui/material/TextField';
 import Divider from '@mui/material/Divider';
 
 function App() {
-  const url = "http://172.25.105.110:3002/api";
+  const url = "http://192.168.1.23:3002/api";
 
-
-  const [cep, setCep] = useState([]);
+  const [postList, setPostList] = useState([]);
+  const [cep, setCep] = useState("");
 
 
   useEffect((cep) => {
     Axios.get(url + "/get").then((cep) => {
-      setCep(cep.data);
+      setPostList(cep.data);
       console.log(cep.data);
       console.log("dentro do useEffect");
     });
-  }, []);
+  }, [postList]);
 
 
   function deletPost(id) {
@@ -58,7 +58,7 @@ function App() {
       <div className='Tabela'>
         <h1 className="titulo">Resultados das pesquisas</h1>
         
-          {cep.map(cep =>
+          {postList.map(cep =>
             <ListItem style={{ backgroundColor: "#A993F9" }} component="a" className="textoLista" key={cep.id}><Divider >
               {"Id do registro: " + cep.id + "   / Cep pesquisado: " + cep.cep}
               <Button variant="contained" className='excluir' onClick={(() => deletPost(cep.id))} >X</Button>
