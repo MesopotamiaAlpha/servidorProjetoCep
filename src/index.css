@@ -22,7 +22,6 @@ code {
   width: 100vh;
   box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
   background-color: #594b8f;
-  height: 80vh;
 }
 
 .texto{
@@ -34,18 +33,16 @@ code {
   box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
 }
 
-
-.Resultados{
-  display: flex;
-  flex-direction: column;
-  width: 100vh;
-  box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
-  background-color: black;
-  height: 80vh;
-
-}
-
 .textoLista{
   margin-top: 10px;
   box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+}
+
+.excluir{
+align-items: flex-end;
+}
+
+.textoLista{
+display: flex;
+flex-direction: column;
 }
