@@ -4,7 +4,7 @@ use pesquisaCep;
 
 CREATE Table cep (
     id int not null auto_increment,
-    cep varchar(8) not null,
+    cep varchar(12) not null,
     primary key (id)
 );
 
