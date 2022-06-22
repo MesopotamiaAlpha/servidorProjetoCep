@@ -8,7 +8,7 @@ import TextField from '@mui/material/TextField';
 import Divider from '@mui/material/Divider';
 
 function App() {
-  const url = "http://192.168.1.23:3002/api";
+  const url = "http://djzefx.ddns.net:3002/api";
 
   const [postList, setPostList] = useState([]);
   const [cep, setCep] = useState("");
